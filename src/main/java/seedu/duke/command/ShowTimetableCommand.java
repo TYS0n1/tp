@@ -28,7 +28,7 @@ public class ShowTimetableCommand extends Command {
      */
 
     @Override
-    public void execute(BookmarkList bookmarks, SlotList slotList, Ui ui, Storage storage) throws DukeException {
+    public void execute(BookmarkList bookmarks, SlotList slotList, Ui ui, Storage bookmarkStorage, Storage slotStorage) throws DukeException {
         slotList.printLessonAtTime(slotList.getSlotsList(), day);
     }
 
