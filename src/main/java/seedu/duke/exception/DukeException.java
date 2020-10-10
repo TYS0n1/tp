@@ -6,6 +6,7 @@ package seedu.duke.exception;
  */
 public class DukeException extends Exception {
     private DukeExceptionType dukeExceptionType;
+    private String info;
 
     /**
      * Constructs a new DukeException instance by storing the given DukeExceptionType.
@@ -16,6 +17,11 @@ public class DukeException extends Exception {
         this.dukeExceptionType = dukeExceptionType;
     }
 
+    public DukeException(DukeExceptionType dukeExceptionType, String info) {
+        this.dukeExceptionType = dukeExceptionType;
+        this.info = info;
+    }
+
     /**
      * Returns the dukeExceptionType of the dukeException.
      *
@@ -24,5 +30,10 @@ public class DukeException extends Exception {
     public DukeExceptionType getError() {
         return dukeExceptionType;
     }
+
+    public String getInfo() {
+        return info;
+    }
+
 
 }

@@ -1,9 +1,8 @@
 package seedu.duke;
 
 import seedu.duke.exception.DukeException;
-import seedu.duke.slot.Slot;
 
-import java.util.ArrayList;
+
 import java.util.Scanner;
 
 /**
@@ -30,17 +29,10 @@ public class Ui {
         return scanner.nextLine().trim();
     }
 
-    private void print(String message) {
-        System.out.println(LINE
-                + message
-                + LINE);
+    public void print(String message) {
+        System.out.println(LINE + message + LINE);
     }
 
-    public void printPublic(String message) {
-        System.out.println(LINE
-                + message
-                + LINE);
-    }
     /**
      * Prints a message after starting the program.
      */
@@ -83,20 +75,30 @@ public class Ui {
         case UNKNOWN_INPUT:
             printUnknownInputMessage();
             break;
-        case INVALID_TASK_NUMBER:
-            //printUseValidTaskNumberMessage();
+        case INVALID_BOOKMARK_NUMBER:
+            printUseValidTaskNumberMessage(dukeException.getInfo());
             break;
         case WRITE_FILE_ERROR:
             //printErrorWritingToFile();
             break;
         case EMPTY_DESCRIPTION:
-            //printEmptyTaskDescriptionMessage(dukeException.getTaskType());
+            printEmptyBookmarkDescriptionMessage();
             break;
-        case INVALID_TASK_FORMAT:
-            //printEnterValidTaskFormatMessage(dukeException.getTaskType());
+        case ERROR_LAUNCHING_URL:
+            printErrorLaunchUrlMessage();
             break;
-        case INVALID_DATE_TIME:
-            //printInvalidDateTime();
+        case INVALID_BOOKMARK_INPUT:
+            printInvalidBookmarkInputMessage();
+            break;
+        case INVALID_URL:
+            printInvalidUrl();
+            break;
+        case INVALID_SLOT_INPUT:
+            printInvalid
+              Input();
+            break;
+        case INVALID_TIME_FORMAT:
+            printInvalidTimeFormat();
             break;
         case INVALID_MODE:
             printUnknownModeMessage();
@@ -110,6 +112,26 @@ public class Ui {
             // unable to get dukeExceptionType
             break;
         }
+    }
+
+    private void printUseValidTaskNumberMessage(String info) {
+        print("Please enter a valid index number between 1 and " + info + "\n");
+    }
+
+    private void printErrorLaunchUrlMessage() {
+        print("Error launching url\n");
+    }
+
+    private void printInvalidUrl() {
+        print("Invalid url\n");
+    }
+
+    private void printInvalidBookmarkInputMessage() {
+        print("Invalid bookmark input\n");
+    }
+
+    private void printEmptyBookmarkDescriptionMessage() {
+        print("Empty description\n");
     }
 
     private void printUnknownInputMessage() {
@@ -128,4 +150,17 @@ public class Ui {
     private void printEmptyTimetableMessage () {
         print("Timetable is empty\n");
     }
+
+    private void printMatchingBookmarks(String message) {
+        print("Invalid url\n");
+    }
+
+    private void printInvalidSlotInput() {
+        print("Invalid slot input\n");
+    }
+
+    private void printInvalidTimeFormat() {
+        print("Invalid time format\n");
+    }
+
 }

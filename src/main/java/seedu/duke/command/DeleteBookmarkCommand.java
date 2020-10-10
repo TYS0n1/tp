@@ -1,5 +1,6 @@
 package seedu.duke.command;
 
+import seedu.duke.ItemList;
 import seedu.duke.Storage;
 import seedu.duke.Ui;
 import seedu.duke.bookmark.Bookmark;
@@ -14,9 +15,11 @@ public class DeleteBookmarkCommand extends Command {
 
 
     /**
-     * Constructs a new ExitCommand instance and sets isExitCommand to true.
+     * Constructs a new DeleteBookmarkCommand instance and stores the information of the bookmark given by the input.
+     *
+     * @param command The user input command.
+     * @throws DukeException thrown if input command is invalid.
      */
-
     public DeleteBookmarkCommand(String command) throws DukeException {
         String details = command.substring(DEL_KW.length());
         if (!details.startsWith(" ")) {
@@ -25,32 +28,33 @@ public class DeleteBookmarkCommand extends Command {
         try {
             index = Integer.parseInt(details.trim()) - 1;
         } catch (NullPointerException | NumberFormatException | IndexOutOfBoundsException e) {
-            throw new DukeException(DukeExceptionType.INVALID_TASK_NUMBER);
+            throw new DukeException(DukeExceptionType.INVALID_BOOKMARK_NUMBER);
         }
     }
 
 
     /**
-     * Prints the exit screen before the program exits.
+     * Deletes the bookmark in the bookmark list.
      *
-     * @param bookmarks The list of bookmarks.
+     * @param items The list of bookmarks.
      * @param ui The user interface.
      * @param storage The storage for saving and loading.
      */
     @Override
-    public void execute(BookmarkList bookmarks, SlotList slotList, Ui ui, Storage storage) throws DukeException {
+    public void execute(ItemList items, SlotList slotList, Ui ui, Storage storage) throws DukeException {
+        BookmarkList bookmarks = (BookmarkList) items;
         try {
             Bookmark bookmark = bookmarks.getBookmark(index);
             bookmarks.deleteBookmark(bookmarks.getBookmark(index));
-            ui.printPublic(getMessage(bookmark));
+            ui.print(getMessage(bookmark));
             //storage.save(taskList.getData());
         } catch (IndexOutOfBoundsException e) {
-            throw new DukeException(DukeExceptionType.INVALID_TASK_NUMBER);
+            throw new DukeException(DukeExceptionType.INVALID_BOOKMARK_NUMBER);
         }
     }
 
     private String getMessage(Bookmark bookmark) {
-        String message = "\tNI've deleted this bookmark!:\n"
+        String message = "\tI've deleted this bookmark!:\n"
                 + "\t  [" + bookmark.getModule() + "] " + bookmark.getDescription() + " " + bookmark.getUrl() + "\n";
         return message;
     }

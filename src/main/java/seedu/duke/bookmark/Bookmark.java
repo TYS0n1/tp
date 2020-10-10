@@ -1,9 +1,9 @@
 package seedu.duke.bookmark;
+
 import seedu.duke.command.AddBookmarkCommand;
 import seedu.duke.exception.DukeException;
 import seedu.duke.exception.DukeExceptionType;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -17,8 +17,7 @@ public class Bookmark {
     private String module;
     private String description;
     private String url;
-    private final String SEPARATOR = " | ";
-    
+    private static final String SEPARATOR = " | ";
 
     /**
      * Constructs a bookmark object containing a URL and description of the webpage.
@@ -31,30 +30,6 @@ public class Bookmark {
         this.description = description.trim();
         this.url = url.trim();
     }
-
-    /**
-     * Constructs a bookmark object containing a URL.
-     *
-     * @param url The URL of the webpage.
-     */
-    public Bookmark(String url) {
-        this.url = url.trim();
-    }
-
-    /**
-     * Returns the URL and description that can be detected from the given input.
-     *
-     * @param input the string input by the user.
-     * @return a list of strings containing the URL and the description
-     */
-
-//    public static List<String> extractDescriptionAndURL(String input) {
-//        List<String> urlAndDescription = Arrays.asList(input.split(" ", 2));
-//        if (urlAndDescription.size() != 2) {
-//            throw new DukeException(DukeExceptionType.INVALID_URL_AND_DESCRIPTION);
-//        }
-//        return urlAndDescription;
-//    }
     
     /**
      * Returns the topic, URL and description that can be detected from the given input.
@@ -62,46 +37,72 @@ public class Bookmark {
      * @param input the string input by the user.
      * @return a list of strings containing the topic, URL and the description
      */
-
-    public static List<String> extractModuleDescriptionAndURL (String input) throws DukeException {
+    public static List<String> extractModuleDescriptionAndUrl(String input) throws DukeException {
         input = input.substring(AddBookmarkCommand.ADD_KW.length()).trim();
-        System.out.println(input);
-        List<String> moduleDescriptionURL = new ArrayList<String>(Arrays.asList(input.split(" ", 3)));
-        if (moduleDescriptionURL.size() == 2) {
-            moduleDescriptionURL.add(0, "");  // No entry for module
+        List<String> moduleDescriptionUrl = new ArrayList<>(Arrays.asList(input.split(" ", 3)));
+        if (moduleDescriptionUrl.size() == 2) {
+            moduleDescriptionUrl.add(0, "");  // No entry for module
         }
-        if (moduleDescriptionURL.size() != 3) {
-            throw new DukeException(DukeExceptionType.INVALID_URL_AND_DESCRIPTION);
+        if (moduleDescriptionUrl.size() != 3) {
+            throw new DukeException(DukeExceptionType.INVALID_BOOKMARK_INPUT);
         }
-        if (moduleDescriptionURL.get(1).isBlank() || moduleDescriptionURL.get(2).isBlank()) {
-           throw new DukeException(DukeExceptionType.EMPTY_DESCRIPTION);
+        if (moduleDescriptionUrl.get(1).isBlank() || moduleDescriptionUrl.get(2).isBlank()) {
+            throw new DukeException(DukeExceptionType.EMPTY_DESCRIPTION);
         }
-        if (!isURLValid(moduleDescriptionURL.get(2))) {
-            throw new DukeException(DukeExceptionType.INVALID_URL_AND_DESCRIPTION);
+        if (!isUrlValid(moduleDescriptionUrl.get(2))) {
+            throw new DukeException(DukeExceptionType.INVALID_URL);
         }
 
-        return moduleDescriptionURL;
+        return moduleDescriptionUrl;
     }
 
-    private static Boolean isURLValid(String url) {
+    private static Boolean isUrlValid(String url) {
+        boolean isValid = false;
         if (url.startsWith("www.") || url.startsWith("https://")) {
-            return true;
+            isValid = true;
         }
-
-        return false;
+        return isValid;
     }
-        
 
     /**
      * This method opens a web browser and open the URL of the bookmark.
      */
-    public void launch() {
-        Runtime rt = Runtime.getRuntime();
+    public void launch() throws DukeException {
         try {
-            rt.exec("rundll32 url.dll,FileProtocolHandler " + url);
+            launchUrl();
         } catch (IOException e) {
-            System.out.println("jippai jialat liao");
+            throw new DukeException(DukeExceptionType.ERROR_LAUNCHING_URL);
         }
+    }
+
+    private void launchUrl() throws IOException {
+        Runtime rt = Runtime.getRuntime();
+        String os = System.getProperty("os.name").toLowerCase();
+        if (os.contains("win")) {
+            launchUrlForWindows(rt);
+        } else if (os.contains("mac")) {
+            launchUrlForMac(rt);
+        } else if (os.contains("nix") || os.contains("nux")) {
+            launchUrlForLinux(rt);
+        }
+    }
+
+    private void launchUrlForWindows(Runtime rt) throws IOException {
+        rt.exec("rundll32 url.dll,FileProtocolHandler " + url);
+    }
+
+    private void launchUrlForMac(Runtime rt) throws IOException {
+        rt.exec("open " + url);
+    }
+
+    private void launchUrlForLinux(Runtime rt) throws IOException {
+        String link;
+        if (url.startsWith("www.")) {
+            link = "https://" + url;
+        } else {
+            link = url;
+        }
+        rt.exec("xdg-open " + link);
     }
 
     /**
@@ -134,7 +135,7 @@ public class Bookmark {
         return module + SEPARATOR + description + SEPARATOR + url;
     }
 
-    public static Bookmark initBookmark(String data) throws DukeException {
+    public static Bookmark initBookmark(String data) {
         List<String> details =  Arrays.asList(data.split("\\|"));
         String module = details.get(0).trim();
         String description = details.get(1).trim();
@@ -142,6 +143,5 @@ public class Bookmark {
         Bookmark bookmark = new Bookmark(module, description, url);
         return bookmark;
     }
-
-
 }
+

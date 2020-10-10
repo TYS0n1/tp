@@ -1,5 +1,6 @@
 package seedu.duke.command;
 
+import seedu.duke.ItemList;
 import seedu.duke.Storage;
 import seedu.duke.Ui;
 import seedu.duke.bookmark.Bookmark;
@@ -7,7 +8,7 @@ import seedu.duke.bookmark.BookmarkList;
 import seedu.duke.exception.DukeException;
 import seedu.duke.slot.SlotList;
 
-public class ListCommand extends Command{
+public class ListCommand extends Command {
     public static final String LIST_KW = "list";
 
     /**
@@ -16,14 +17,6 @@ public class ListCommand extends Command{
     public ListCommand() {
 
     }
-
-    /**
-     * Prints all the details of the tasks in the list.
-     *
-     * @param taskList The list of tasks.
-     * @param ui The user interface.
-     * @param storage The storage for saving and loading.
-     */
 
     private String getMessage(BookmarkList bookmarks) {
         String message = "\tHere are the bookmarks in your list:\n";
@@ -34,8 +27,9 @@ public class ListCommand extends Command{
     }
 
     @Override
-    public void execute(BookmarkList bookmarks, SlotList slotList, Ui ui, Storage storage) throws DukeException {
+    public void execute(ItemList items, SlotList slotList, Ui ui, Storage storage) throws DukeException {
+        BookmarkList bookmarks = (BookmarkList) items;
         String message = getMessage(bookmarks);
-        ui.printPublic(message);
+        ui.print(message);
     }
 }
