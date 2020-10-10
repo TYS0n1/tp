@@ -1,6 +1,9 @@
 package seedu.duke.command;
 
-import seedu.duke.*;
+import seedu.duke.ItemList;
+import seedu.duke.Ui;
+import seedu.duke.Storage;
+import seedu.duke.Parser;
 import seedu.duke.bookmark.BookmarkList;
 import seedu.duke.exception.DukeException;
 import seedu.duke.exception.DukeExceptionType;
