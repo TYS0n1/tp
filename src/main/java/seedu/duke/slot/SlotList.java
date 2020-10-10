@@ -60,6 +60,7 @@ public class SlotList extends ItemList {
      *
      * @return the data of all the Slots.
      */
+
     public String getData() {
         StringBuilder data = new StringBuilder();
         for (Slot slot : slots) {

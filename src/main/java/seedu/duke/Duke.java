@@ -1,6 +1,8 @@
 package seedu.duke;
 
 import seedu.duke.bookmark.BookmarkList;
+import seedu.duke.command.AddSlotCommand;
+import seedu.duke.command.DeleteSlotCommand;
 import seedu.duke.slot.SlotList;
 import seedu.duke.command.Command;
 import seedu.duke.exception.DukeException;

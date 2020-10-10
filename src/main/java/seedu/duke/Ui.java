@@ -2,7 +2,6 @@ package seedu.duke;
 
 import seedu.duke.exception.DukeException;
 
-
 import java.util.Scanner;
 
 /**

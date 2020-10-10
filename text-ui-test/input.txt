@@ -1,1 +1,18 @@
-James Gosling
+hello
+list
+add CS2113T tutorial www.google.com
+add test delete www.jadfasd.adsfa
+add noModule www.google.com
+list
+delete 2
+list
+add asjdfalj
+add jasdkfl asdjfkla sjdkfla
+add noModule inValidUrl
+add empty  description
+list
+slotadd 10:00 12:00 mon cs1231 lecture
+slotadd 1111
+slotadd 10:00 11:00
+slotdelete 1
+bye
