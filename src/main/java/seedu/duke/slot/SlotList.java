@@ -136,7 +136,7 @@ public class SlotList extends ItemList {
             throw new DukeException(DukeExceptionType.EMPTY_TIMETABLE);
         } else if (dayInput == null) {
             throw new DukeException(DukeExceptionType.INVALID_TIMETABLE_DAY);
-        } else if(dayInput.equals("ALL") == true) {
+        } else if (dayInput.equals("ALL") == true) {
             printTimetable(slots);
             return;
         }
