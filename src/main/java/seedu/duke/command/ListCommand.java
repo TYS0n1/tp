@@ -27,7 +27,7 @@ public class ListCommand extends Command {
     }
 
     @Override
-    public void execute(ItemList items, SlotList slotList, Ui ui, Storage storage) throws DukeException {
+    public void execute(ItemList items, SlotList slotList, Ui ui, Storage bookmarkStorage, Storage slotStorage) throws DukeException {
         BookmarkList bookmarks = (BookmarkList) items;
         String message = getMessage(bookmarks);
         ui.print(message);
