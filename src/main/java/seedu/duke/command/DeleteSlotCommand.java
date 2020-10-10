@@ -36,7 +36,7 @@ public class DeleteSlotCommand extends Command {
      *
      * @param items The list of Slots.
      * @param ui The user interface.
-     * @param storage The storage for saving and loading.
+     * @param slotStorage The storage for saving and loading.
      */
     @Override
     public void execute(ItemList items, SlotList slotList, Ui ui, Storage bookmarkStorage, Storage slotStorage)
