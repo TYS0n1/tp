@@ -94,8 +94,7 @@ public class Ui {
             printInvalidUrl();
             break;
         case INVALID_SLOT_INPUT:
-            printInvalid
-              Input();
+            printInvalidSlotInput();
             break;
         case INVALID_TIME_FORMAT:
             printInvalidTimeFormat();
