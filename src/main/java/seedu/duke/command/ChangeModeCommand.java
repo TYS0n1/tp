@@ -22,7 +22,7 @@ public class ChangeModeCommand extends Command {
 
 
     @Override
-    public void execute(BookmarkList bookmarks, SlotList slotList, Ui ui, Storage storage) throws DukeException {
+    public void execute(BookmarkList bookmarks, SlotList slotList, Ui ui, Storage bookmarkStorage, Storage slotStorage) throws DukeException {
         if (setToMode == 1) {
             Parser.programMode = 1;
             ui.printPublic("Changing to bookmark mode" + System.lineSeparator());
