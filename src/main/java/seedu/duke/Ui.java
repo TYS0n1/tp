@@ -106,6 +106,7 @@ public class Ui {
             break;
         case EMPTY_TIMETABLE:
             printEmptyTimetableMessage();
+            break;
         default:
             // unable to get dukeExceptionType
             break;
@@ -141,11 +142,11 @@ public class Ui {
     }
 
     private void printUnknownDayMessage() {
-        print("Unknown day input\n" +
-                "Valid days: monday, tuesday, wednesday, thursday, friday, saturday, sunday\n");
+        print("Unknown day input\n" 
+              + "Valid days: monday, tuesday, wednesday, thursday, friday, saturday, sunday\n");
     }
 
-    private void printEmptyTimetableMessage () {
+    private void printEmptyTimetableMessage() {
         print("Timetable is empty\n");
     }
 
