@@ -25,12 +25,7 @@ public class Ui {
      */
     public String readCommand() {
         System.out.print("Input: ");
-        String command = "empty";
-        if (scanner.hasNextLine()) {
-            command = scanner.nextLine().trim();
-        }
-
-        return command;
+        return scanner.nextLine().trim();
     }
 
     public void print(String message) {
