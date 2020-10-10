@@ -40,14 +40,14 @@ public class AddBookmarkCommand extends Command {
      * @param storage The storage for saving and loading.
      */
     @Override
-    public void execute(ItemList items, SlotList slotList, Ui ui, Storage storage) {
+    public void execute(ItemList items, SlotList slotList, Ui ui, Storage bookmarkStorage, Storage slotStorage) {
         BookmarkList bookmarks = (BookmarkList) items;
         Bookmark bookmark = new Bookmark(module, description, url);
         bookmarks.addBookmark(bookmark);
         ui.print("Added bookmark: " + "[" + module + "] "
                 + description + " " +  url + System.lineSeparator());
         try {
-            storage.save(bookmarks.getData());
+            bookmarkStorage.save(bookmarks.getData());
         } catch (DukeException e) {
             e.printStackTrace();
         }
