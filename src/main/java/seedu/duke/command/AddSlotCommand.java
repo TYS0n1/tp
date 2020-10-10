@@ -51,7 +51,7 @@ public class AddSlotCommand extends Command {
     @Override
     public void execute(ItemList items, SlotList slotList, Ui ui, Storage bookmarkStorage, Storage slotStorage)
             throws DukeException {
-        SlotList slots = (SlotList) items;
+        SlotList slots = (SlotList) slotList;
         Slot slot = new Slot(startTime, endTime, day, title);
         slots.addSlot(slot);
         ui.print("Added slot: " + day + " [" + startTime + "-" + endTime + "] "
