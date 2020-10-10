@@ -21,16 +21,17 @@ public class ShowTimetableCommand extends Command {
     }
 
     @Override
-    public void execute(ItemList items, SlotList slotList, Ui ui, Storage bookmarkStorage, Storage slotStorage) throws DukeException {
+    public void execute(ItemList items, SlotList slotList, Ui ui, Storage bookmarkStorage, Storage slotStorage) 
+        throws DukeException {
         slotList.printLessonAtTime(slotList.getSlotList(), day);
     }
 
     public String getDayFromCommand(String input) {
         String outputData;
 
-        if (input.length() == 4){
+        if (input.length() == 4) {
             return "ALL";
-        } else if (input.substring(4 , 5).equals(" ") == false) {
+        } else if (input.substring(4, 5).equals(" ") == false) {
             return null;
         }
 
