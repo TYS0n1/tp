@@ -25,10 +25,10 @@ public class ChangeModeCommand extends Command {
     public void execute(BookmarkList bookmarks, SlotList slotList, Ui ui, Storage bookmarkStorage, Storage slotStorage) throws DukeException {
         if (setToMode == 1) {
             Parser.programMode = 1;
-            ui.printPublic("Changing to bookmark mode" + System.lineSeparator());
+            ui.print("Changing to bookmark mode" + System.lineSeparator());
         } else if (setToMode == 2) {
             Parser.programMode = 2;
-            ui.printPublic("Changing to timetable mode" + System.lineSeparator());
+            ui.print("Changing to timetable mode" + System.lineSeparator());
         } else {
             throw new DukeException(DukeExceptionType.INVALID_MODE);
         }
