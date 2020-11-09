@@ -12,12 +12,8 @@ This user guide would help you walkthrough the features of Zoomaster and ways to
 
 ## 2.0 About this Document
 
-Please take note of the symbols used throughout the document:
-
-| Icon | Meaning |
-| --- | --- |
-| :bangbang: | Alert on important thing to take note of |
-|:information_source: | Useful tip to know |
+Please take note that the ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/bangbang.png)
+symbol is used to indicate important warnings throughout the document.
 
 <a name="command_format"></a>
 Please also take note of the labels on command formatting:
@@ -236,7 +232,7 @@ While `showsettings` shows you the settings, this command lets you change one of
 * `{NEW_OPTION}` is the new setting option that you would like to select. This needs to be typed in exactly as show from the `showsettings` command.
 
 For example, let's say that you want Zoomaster to enter `bookmark` mode when you start it. 
-You can type in `set def_mode bookmark` and Zoomaster will change your settings, as shown below.
+You can type in `set def_mode bookmark` and Zoomaster will change your settings, as shown below.  
 
 ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/setsettings.png)
 
@@ -267,20 +263,22 @@ This feature helps you print out all bookmark in your bookmark list.
 ```
 Format: show
 ```
-Example of a printed out bookmark list.
+Example of a printed out bookmark list.  
 
-![]()
+![](images/showOutput.PNG)
 
-If your bookmark list is empty you will get message ""
+If your bookmark list is empty you will get the message show in the screenshot below  
+
+![](images/showEmptyBookmarks.PNG)
 
 <br/><br/> 
 <a name="addbookmark"></a>  
 #### 5.2.2 Add bookmark: `add`  
 You can add bookmarks to your bookmark list. A bookmark contains its description and URL.
 
-> :bangbang:
+> ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/bangbang.png)
 >* The validity of the `URL` you entered cannot be checked. Please ensure that you entered the correct link. 
->* Your `DESCRIPTION` must only contain one word (no whitespace inside). You can use underscore("_") or dashes("-"") to string
+>* Your `DESCRIPTION` must only contain one word (no whitespace inside). You can use underscore("_") or dashes("-") to string
 >multiple words together. Eg. "github_team_repo" or "cs2113t-website".
 >* Your input `URL` has to start with `www.`, `http://` or `https://`.
 
@@ -290,11 +288,8 @@ Format: add {DESCRIPTON} {URL}
 
 Example of usage:
 * `add google www.google.com/`  
-![]()
 * `add example http://example.com`  
-![]()
 * `add cs2113t-website https://nus-cs2113-ay2021s1.github.io/website/`  
-![]()
 
 <br/><br/> 
 <a name="deletebookmark"></a>  
@@ -311,8 +306,8 @@ Example of usage:
 * `delete 2`  
 * `delete 4`  
 
-You should see a message similar to the screenshot below.
-![]()
+You should see a message similar to the screenshot below.  
+![](images/deletebookmarksoutput.PNG)
 
 <!-- @@author fchensan -->
 <br/><br/> 
@@ -339,7 +334,7 @@ You should enter a `desc` or `url` depending on which one you want to edit.
 #### 5.2.4 Find bookmarks: `find`  
 You can use this command to find bookmarks with matching description.
 
-> :bangbang:
+> ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/bangbang.png)
 >* Your `DESCRIPTION` must only contain one word (no whitespace inside). 
 >See the [command format](#command_format) for more details.
 
@@ -351,11 +346,10 @@ Example of usage:
 * `find cs2113t-website`
 * `find notes`  
 
-You should see a message similar to the screenshot below when a successful match is found.
-![]()
+You should see a message similar to the screenshot below when a successful match is found.  
+![](images/findBookmarkoutput.PNG)
 
-Else you should see "No bookmarks contain the specified keyword!" like the screenshot below.
-![]()
+Else you should see "No bookmarks contain the specified keyword!".
 
 <br/><br/> 
 <a name="launchbookmark"></a>  
@@ -368,7 +362,7 @@ Your selection of bookmark(s) can be via:
 The index will correspond to the index of that bookmark in the list. 
 You can do a `show` command to check the bookmark indexes.  
 
-> :bangbang:
+> ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/bangbang.png)
 >* Your `DESCRIPTION` must only contain one word (no whitespace inside). 
 >See the [command format](#command_format) for more details.
 >
@@ -400,7 +394,7 @@ Else if you have a lesson ongoing currently, it will instead show a "lesson now"
 *around* your current lesson.
 
 >  
->:bangbang: 
+>![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/bangbang.png) 
 > * You have to enter `DAY` input according to the command format else it will not be recognised as a valid date. 
 >The valid inputs are `mon`, `tue`, `wed`, `thu`, `fri`, `sat`, `sun`and `today`. 
 >You can see the [command format](#command_format) for more information.
@@ -437,11 +431,11 @@ Example of usage:
 <br/><br/>
 <a name="showmoduledetails"></a>
 #### 5.3.2 Show module and slot details: `show` (Xing Rong)
-Shows the details of a module or slot that has been added.  
+You can use this command to show the details of a module or slot that has been added.  
 You can see the respective indexes of each of the slots from the module 
 and using the `bookmarks` keyword will show the bookmarks which are saved in the module and its slots.
 
-> :bangbang:
+> ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/bangbang.png)
 > * You can only see modules that are listed on the NUSMods website. 
 > You can see the [command format](#command_format) for more information.
 >
@@ -450,11 +444,11 @@ Format (show module details): show {MODULE} bookmarks(optional)
 ```
 
 Example of usage:   
-* `show CS2113T`  
-![](images/showTimetableCommand/showmoduleoutput.PNG)  
-
-* `show CS2113T bookmarks`  
-![](images/showTimetableCommand/showmodulebookmarksoutput.PNG)
+>* `show CS2113T`  
+>![](images/showTimetableCommand/showmoduleoutput.PNG)  
+>
+>* `show CS2113T bookmarks`  
+>![](images/showTimetableCommand/showmodulebookmarksoutput.PNG)
 
 <br/><br/> 
 <a name="addtimeslot"></a>
@@ -462,7 +456,7 @@ Example of usage:
 You can add modules, time slots and bookmarks using this feature.
 You can also chain commands when adding multiple slots and bookmarks to a module by using `,` as a separator.
 
-> :bangbang:
+> ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/bangbang.png)
 >* You are required to insert **a space** between each parameter.
 >* The chaining of commands only performs on **one module** which is `{MODULE}`.    
 >* You can only add a module that is listed on the NUSMods website. 
@@ -503,42 +497,42 @@ Format (chaining commands): add {MODULE} {DESCRIPTION} {DAY} {START_TIME} {END_T
   exists or is valid from left to right of the input before adding them.
   * In the command `add cs2113t lecture fri 16:00 18:00`, if `cs2113t` module already exists, 
     then it will not be added into the timetable. The slot `lecture fri 16:00 18:00` 
-    which is valid and not a duplicate will then be added to the existing `cs2113t` module.
+    will then be added to the existing `cs2113t` module.
 
 
 Example of usage:   
 
-* Adding a module  
-input: `add CS2113T`  
-output:  
-![](images/addSlotCommand/addmoduleoutput.PNG)  
-
-* Adding a slot to a module  
-input: `add CS2102 tutorial fri 10:00 12:00`  
-output:  
-![](images/addSlotCommand/addslottomoduleoutput.PNG)  
-
-* Adding a bookmark to a module  
-input: `add CS2113T module-website https://nus-cs2113-ay2021s1.github.io/website/index.html`  
-output:  
-![](images/addSlotCommand/addbookmarktomoduleoutput.PNG)  
-
-* Adding a bookmark to a slot  
-input: `add CS2102 tutorial fri 10:00 12:00 www.google.com`   
-output:  
-![](images/addSlotCommand/addbookmarktoslotoutput.PNG)  
-
-* Chaining commands  
-input: `add CG2271 tutorial thu 11:00 12:00, lecture wed 09:00 11:00 www.yahoo.com, example-bookmark https://www.youtube.com`  
-output:  
-(The indentation of each line of the output shows the relationships between the components.
-In the output shown below, `bookmarks added to CG2271 lecture` is one level of indentation 
-higher than the previous line. This means that the bookmark is added to that lecture slot.
-Similarly, `bookmark added to module` is one level of indentation higher than `CG2271 added`, 
-which suggests that the bookmark is added to the module CG2271.)  
-![](images/addSlotCommand/addchaincommandoutput.PNG)  
-result:  
-![](images/addSlotCommand/addresult.PNG)
+>* **Adding a module**  
+>  * Input: `add CS2113T`  
+>  * Output:  
+>![](images/addSlotCommand/addmoduleoutput.PNG)  
+>
+>* **Adding a slot to a module**  
+>  * Input: `add CS2102 tutorial fri 10:00 12:00`  
+>  * Output:  
+>![](images/addSlotCommand/addslottomoduleoutput.PNG)  
+>
+>* **Adding a bookmark to a module**  
+>  * Input: `add CS2113T module-website https://nus-cs2113-ay2021s1.github.io/website/index.html`  
+>  * Output:  
+>![](images/addSlotCommand/addbookmarktomoduleoutput.PNG)  
+>
+>* **Adding a bookmark to a slot**  
+>  * Input: `add CS2102 tutorial fri 10:00 12:00 www.google.com`   
+>  * Output:  
+>![](images/addSlotCommand/addbookmarktoslotoutput.PNG)  
+>
+>* **Chaining commands**  
+>  * Input: `add CG2271 tutorial thu 11:00 12:00, lecture wed 09:00 11:00 www.yahoo.com, example-bookmark https://www.youtube.com`  
+>  * Output:  
+>(The indentation of each line of the output shows the relationships between the components.
+>In the output shown below, `bookmarks added to CG2271 lecture` is one level of indentation 
+>higher than the previous line. This means that the bookmark is added to that lecture slot.
+>Similarly, `bookmark added to module` is one level of indentation higher than `CG2271 added`, 
+>which suggests that the bookmark is added to the module CG2271.)  
+>![](images/addSlotCommand/addchaincommandoutput.PNG)  
+>  * Result:  
+>![](images/addSlotCommand/addresult.PNG)
   
 
 
@@ -556,7 +550,7 @@ More examples:
 #### 5.3.4 Delete module, time slot and bookmarks: `delete` (Xing Rong)
 Deletes module, time slot or their bookmarks.
 
-> :bangbang:
+> ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/bangbang.png)
 >* You can only delete a module that is listed on the NUSMods website. 
 > You can see the [command format](#command_format) for more information.
 
@@ -573,10 +567,10 @@ Format (deleting bookmarks of a slot of a module): delete {MODULE} {INDEX} bookm
 * Deleting bookmarks will delete all bookmarks associated with the module or slot.
 
 Example of usage:   
-* `delete CS2113T` 
-* `delete CG2271 1` 
-* `delete CS2113T bookmarks` 
-* `delete CS2113T 1 bookmarks` 
+>* `delete CS2113T` 
+>* `delete CG2271 1` 
+>* `delete CS2113T bookmarks` 
+>* `delete CS2113T 1 bookmarks` 
 <!-- @@author -->
 <br/><br/> 
 
@@ -584,13 +578,9 @@ Example of usage:
 #### 5.3.5 Edit slot's module, title, time: `edit`  (Francisco) 
 Edits the module, title or time for a specific slot.
 
-> :bangbang:
+> ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/bangbang.png)
 >* You can only edit a module that is listed on the NUSMods website. 
->You can see the [command format](#command_format) for more information.
->* You cannot change the time of a slot to a period which is currently occupied in the timetable. <br></br>
->Eg. You wish to change a timeslot from friday 16:00 to 18:00 into friday 17:00 to 18:00, you cannot change it directly 
->using the edit command. <br></br> We recommend you to either change the timeslot to a period which is unoccupied then to your 
->desired period or deleting the current timeslot and adding a new timeslot in your desired period. 
+>You can see the [command format](#command_format) for more information. 
 
 ```
 Format (editing the module of a slot): edit module {DAY} {INDEX} {new MODULE}
@@ -604,12 +594,15 @@ Format (editing the time of a slot): edit time {DAY} {INDEX} {DAY} {new START_TI
 * For editing the time of a slot, the first `DAY` parameter is to choose the slot you wish to edit.
 The second `DAY` parameter is for the new day of the week you wish to set your slot.
 
+<!-- @@author fchensan -->
 > For example, let's say that you have these two slots on wednesday:
 > ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/editslotcontext.png)
+>
 > If you want to change the title of the second slot to "tutorial", you can simply type `edit title wed 2 tutorial`.
-> You should then see a message as shown below:
+> You should then see a message as shown below:  
+>
 > ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/editslot.png)
-
+>
 > More examples of usage:   
 >* `edit module mon 1 CS1010`  
 >* `edit title mon 1 lecture`
@@ -621,7 +614,7 @@ The second `DAY` parameter is for the new day of the week you wish to set your s
 #### 5.3.6 Launch bookmarks from module, slot: `launch` (Xing Rong)  
 Launches the bookmarks of slots or the bookmarks of a module
 
-> :bangbang:
+> ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/bangbang.png)
 >* You can only launch a module that is listed on the NUSMods website. 
 >You can see the [command format](#command_format) for more information.
 
@@ -745,6 +738,7 @@ and save the txt file. You can now add the module in Zoomaster.
 **show**|`show`
 **add**|`add {DESCRIPTION} {URL}` <br>example: `add cheatsheet www.google.com` <br/><br/>
 **delete**|`delete {INDEX}`<br>example: `delete 2`|
+**edit**|`edit {desc/url} {INDEX} {NEW_VALUE}`<br>example: `edit desc 1 math`, `edit url 3 www.google.com`|
 **find**|`find {MODULE} {DESCRIPTION(optional)}` <br>example: `find CS2113 tutorial`
 **launch**|`launch {MODULE} {DESCRIPTION(optional)}` <br>example: `launch CS2113`
 ***Timetable Mode***|

@@ -62,7 +62,7 @@ public class Parser {
             command = new ExitCommand();
         } else if (input.compareToIgnoreCase(LaunchNowCommand.LAUNCH_NOW_KW) == 0) {
             command = new LaunchNowCommand();
-        } else if (input.startsWith(ChangeModeCommand.MODE_KW)) {
+        } else if (input.toLowerCase().startsWith(ChangeModeCommand.MODE_KW)) {
             command = new ChangeModeCommand(input);
         } else if (input.compareToIgnoreCase(ClearCommand.CLEAR_KW) == 0) {
             command = new ClearCommand();
