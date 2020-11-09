@@ -11,6 +11,9 @@ import java.time.LocalTime;
 import java.util.List;
 
 //@@author xingrong123
+/**
+ * Represents the command to launch the bookmarks of the current ongoing class slot in the timetable.
+ */
 public class LaunchNowCommand extends Command {
     public static final String LAUNCH_NOW_KW = "launch now";
 

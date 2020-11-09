@@ -233,6 +233,9 @@ public class Ui {
         case INVALID_SLOT_NUMBER:
             printInvalidSlotNumber(e.getInfo());
             break;
+        case INVALID_INDEX_IN_DAY:
+            printInvalidIndexInDay(e.getInfo());
+            break;
         case INVALID_TIME_FORMAT:
             printInvalidTimeFormat();
             break;
@@ -247,6 +250,9 @@ public class Ui {
             break;
         case EMPTY_TIMETABLE:
             printEmptyTimetableMessage();
+            break;
+        case EMPTY_DAY:
+            printEmptyDayMessage();
             break;
         case CONNECTION_ERROR:
             printConnectionErrorMessage(e.getInfo());
@@ -276,6 +282,15 @@ public class Ui {
     private void printInvalidSlotNumber(String index) {
         printRedWithBorder("Invalid slot number. Please enter a valid index number between 1 and " + index + NEW_LINE
                 + "Enter command: \"show <module>\" to view slot index" + NEW_LINE);
+    }
+
+    private void printInvalidIndexInDay(String index) {
+        printRedWithBorder("Invalid slot number. Please enter a valid index number between 1 and " + index + NEW_LINE
+            + "Enter command: \"show\" to view slot index" + NEW_LINE);
+    }
+
+    private void printEmptyDayMessage() {
+        printRedWithBorder("No slots on that day!" + NEW_LINE);
     }
 
     private void printJsonParseErrorMessage(String weblink) {
@@ -428,6 +443,7 @@ public class Ui {
         }
         printYellow("You can also check what each command does using: ");
         printCyan("help {command}" + NEW_LINE);
+        System.out.println(LINE);
     }
 
     //@@author Speedweener

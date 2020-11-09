@@ -1,0 +1,117 @@
+{
+  "modules": [
+    {
+      "moduleCode": "CS1010",
+      "bookmarks": {
+        "bookmarks": [],
+        "lineSeparator": "\r\n",
+        "items": []
+      },
+      "slots": [
+        {
+          "startTime": {
+            "hour": 12,
+            "minute": 0,
+            "second": 0,
+            "nano": 0
+          },
+          "endTime": {
+            "hour": 13,
+            "minute": 0,
+            "second": 0,
+            "nano": 0
+          },
+          "day": "mon",
+          "title": "description",
+          "bookmarks": {
+            "bookmarks": [],
+            "lineSeparator": "\r\n",
+            "items": []
+          }
+        },
+        {
+          "startTime": {
+            "hour": 12,
+            "minute": 0,
+            "second": 0,
+            "nano": 0
+          },
+          "endTime": {
+            "hour": 13,
+            "minute": 0,
+            "second": 0,
+            "nano": 0
+          },
+          "day": "tue",
+          "title": "lecture",
+          "bookmarks": {
+            "bookmarks": [],
+            "lineSeparator": "\r\n",
+            "items": []
+          }
+        },
+        {
+          "startTime": {
+            "hour": 12,
+            "minute": 0,
+            "second": 0,
+            "nano": 0
+          },
+          "endTime": {
+            "hour": 13,
+            "minute": 0,
+            "second": 0,
+            "nano": 0
+          },
+          "day": "tue",
+          "title": "tutorial",
+          "bookmarks": {
+            "bookmarks": [],
+            "lineSeparator": "\r\n",
+            "items": []
+          }
+        }
+      ]
+    },
+    {
+      "moduleCode": "CS2040C",
+      "bookmarks": {
+        "bookmarks": [],
+        "lineSeparator": "\r\n",
+        "items": []
+      },
+      "slots": []
+    },
+    {
+      "moduleCode": "CS3243",
+      "bookmarks": {
+        "bookmarks": [],
+        "lineSeparator": "\r\n",
+        "items": []
+      },
+      "slots": [
+        {
+          "startTime": {
+            "hour": 12,
+            "minute": 0,
+            "second": 0,
+            "nano": 0
+          },
+          "endTime": {
+            "hour": 13,
+            "minute": 0,
+            "second": 0,
+            "nano": 0
+          },
+          "day": "mon",
+          "title": "lecture",
+          "bookmarks": {
+            "bookmarks": [],
+            "lineSeparator": "\r\n",
+            "items": []
+          }
+        }
+      ]
+    }
+  ]
+}

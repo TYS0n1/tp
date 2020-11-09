@@ -33,7 +33,7 @@ import seedu.zoomaster.slot.Timetable;
 /**
  * Executes the help functionality of the program.
  */
-//@@author
+//@@author Speedweener
 public class HelpCommand extends Command {
     public static final String HELP_KW = "help";
     private String details;
@@ -83,7 +83,6 @@ public class HelpCommand extends Command {
      * @param details The name of the command requested for help by the user.
      * @return isValid.
      */
-    //@@author Speedweener
     private boolean isValidCommand(String details) {
         boolean isValid = false;
 

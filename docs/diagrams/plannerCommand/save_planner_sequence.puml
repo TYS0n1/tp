@@ -1,0 +1,51 @@
+@startuml
+
+-> ":SavePlannerCommand" : execute(bookmarks, planner, ui)
+activate ":SavePlannerCommand"
+
+create ":File"
+":SavePlannerCommand" -> ":File" : new File("./data/planner")
+activate ":File"
+":File" --> ":SavePlannerCommand"
+deactivate ":File"
+
+":SavePlannerCommand" -> ":File" : listFiles()
+activate ":File"
+":File" --> ":SavePlannerCommand" : array of files
+deactivate ":File"
+
+loop num_of_files
+
+    create ":Storage"
+    ":SavePlannerCommand" -> ":Storage" : new Storage(f.getPath(), Timetable.class)
+    activate ":Storage"
+    ":Storage" --> ":SavePlannerCommand"
+    deactivate ":Storage"
+
+    ":SavePlannerCommand" -> ":Storage" : load()
+    activate ":Storage"
+    ":Storage" --> ":SavePlannerCommand" : timetable
+    deactivate ":Storage"
+
+    ":SavePlannerCommand" -> ":SavePlannerCommand" : writeToFile()
+    activate ":SavePlannerCommand"
+    ":SavePlannerCommand" --> ":SavePlannerCommand"
+    deactivate ":SavePlannerCommand"
+
+    ":SavePlannerCommand" -> ":Storage" : writePlanner(timetable, file)
+    activate ":Storage"
+    ":Storage" --> ":SavePlannerCommand"
+    deactivate ":Storage"
+    destroy ":Storage"
+
+end
+
+":SavePlannerCommand" -> ":Ui" : print(message)
+activate ":Ui"
+":Ui" --> ":SavePlannerCommand"
+deactivate ":Ui"
+
+<-- ":SavePlannerCommand"
+deactivate ":SavePlannerCommand"
+
+@enduml

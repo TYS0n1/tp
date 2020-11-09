@@ -7,6 +7,9 @@ import seedu.zoomaster.exception.ZoomasterException;
 import seedu.zoomaster.slot.Timetable;
 
 //@@author xingrong123
+/**
+ * Represents the a command which executes a procedure.
+ */
 public abstract class Command {
 
     protected boolean isExitCommand = false;

@@ -2,7 +2,7 @@
 
 
 ## **Introduction**
- ![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/images/zoomasterwhitebg.png) <br/><br/>
+ ![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/zoomasterwhitebg.png) <br/><br/>
 ### Introduction to Zoomaster
 Zoomaster is a Java application for the Command Line. It provides a simple and intuitive way to store Zoom links for 
 online classes and other useful links for the lesson at hand.<br/>
@@ -81,7 +81,7 @@ then its various components.
 ### Architecture
 
 The figure below shows a high-level design for the architecture of Zoomaster. <br/></br>
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/images/architecture.png) <br/></br>
+![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/architecture.png) <br/></br>
 *<center/> Figure 1.1 Architecture diagram of Zoomaster </center> <br/></br>*
 
 Our Program can be split up into 7 components
@@ -99,7 +99,7 @@ These components interact with each other as shown in Figure 1.1 to execute the 
 <a name="initialization"></a>
 ### Initialization
 The diagram below shows a class-level diagram for Zoomaster. <br/></br>
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/images/initial.png) <br/></br>
+![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/initial.png) <br/></br>
 *<center/> Figure 1.2 Class diagram of Initialization </center> <br/></br>*
 
 **API**:`Zoomaster.java`
@@ -173,16 +173,16 @@ The diagrams are colour coded as such:
 * Blue -> Timetable Mode
 * Red -> Planner Mode
 
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/images/parsercommand/mode0.png) <br/></br>
+![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/parsercommand/mode0.png) <br/></br>
 *<center/> Figure 1.4 Class diagram of Commands valid in all modes (Global) </center> <br/></br>*
 <br></br>
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/images/parsercommand/mode1.png) <br/></br>
+![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/parsercommand/mode1.png) <br/></br>
 *<center/> Figure 1.5 Class diagram of Commands valid in Bookmark Mode </center> <br/></br>*
 <br></br>
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/images/parsercommand/mode2.png) <br/></br>
+![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/parsercommand/mode2.png) <br/></br>
 *<center/> Figure 1.6 Class diagram of Commands valid in Timetable Mode</center> <br/></br>*
 <br></br>
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/images/parsercommand/mode3.png) <br/></br>
+![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/parsercommand/mode3.png) <br/></br>
 *<center/> Figure 1.7 Class diagram of Commands valid in Planner Mode</center> <br/></br>*
 <br></br>
 The Command component is responsible for carrying out the functions of Zoomaster.
@@ -521,7 +521,7 @@ to illustrate the try-catch block.
 
 
 
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/diagrams/loadModuleList/getModuleList.png)  
+![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/diagrams/loadModuleList/getModuleList.png)  
 *<center/> Figure 2.19 Sequence diagram for retrieving module list </center> <br/></br>*
 
 <br></br>
@@ -580,16 +580,16 @@ command does not exist in that mode.
 
 Below is a sequence diagram of the extended HelpCommand.   
 
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/diagrams/loadModuleList/helpCommandOverallDiagram.png)  
+![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/diagrams/loadModuleList/helpCommandOverallDiagram.png)  
 *<center/> Figure 2.20 Sequence diagram for "HelpCommand" </center> <br/></br>*
 <br></br>
 
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/diagrams/deleteSlotCommand/helpCommandDetailsIsEmpty.png)  
+![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/diagrams/loadModuleList/helpCommandDetailsIsEmpty.png)  
 *<center/> Figure 2.21 Sequence diagram for 
 "details is empty" Block </center> <br/></br>*
 <br></br>
 
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/diagrams/deleteSlotCommand/helpCommandDetailsIsNotEmpty.png)  
+![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/diagrams/loadModuleList/helpCommandDetailsIsEmpty.png)  
 *<center/> Figure 2.22 Sequence diagram for 
 "details not empty" Block </center> <br/></br>*
 <br></br>
@@ -688,12 +688,34 @@ Below is the general flow on how the mechanism works:
 4. The user can also call the `add` command to add a new meeting, similar to the timetable feature.
 5. Finally, the user can call the `save` command to store the newly added meeting(s) to each individual timetable.
 
+<br>
+
+The general flow of the loading process is as below:
+1. First, the command clear all the modules in the planner timetable.
+2. Next, the files inside the `planner` folder will be loaded and converted to a single timetable.
+3. The empty slots will be initialised based on the previous timetable and it will return an `EMPTY` module 
+along with all the empty slots.
+4. Finally, a confirmation message will be printed if the loading process is successful.
+
 The sequence diagram below explains how the load planner command is executed:
 
-![](diagrams/load_planner.png) <br/>
-*<center/>Figure 2.26 Sequence diagram for LoadPlannerCommand</center> <br/></br>*
+![](diagrams/plannerCommand/load_planner.png) <br/>
+*<center/>Figure 2.26 Sequence diagram for LoadPlannerCommand</center> <br/>*
+
+<br>
+
+The general flow of the saving process is as below:
+1. First, we store the file paths of the individual timetables to an array of files. 
+2. For each file, the command will load the timetable and add the newly added meeting to the timetable.
+3. Finally, a confirmation message will be printed  if the saving process is successful.
+
+The sequence diagram below explains how the load planner command is executed:
+
+![](diagrams/plannerCommand/save_planner.png) <br/>
+*<center/>Figure 2.27 Sequence diagram for SavePlannerCommand</center> <br/>*
 
 
+<br>
 
 <!-- @@author -->
 <a name="appendix-a"></a>
@@ -793,20 +815,26 @@ Hence, Zoomaster helps to organise students’ Zoom links for easy access to the
 
 <a name="appendix-e-advanced"></a>
 **Advanced**
-1. Testing global commands (`mode`, `help`, `clear`, `exit`)
+1. Testing global commands (`mode`, `help`, `clear`, `showsettings`, `set`, `exit`)
     1. Test `mode` command. Enter `mode bookmark` to enter bookmark mode, you should see the message "Changing to bookmark mode". <br>
     Enter `mode timetable` to enter bookmark mode, you should see the message "Changing to timetable mode". <br>
     Enter `mode planner` to enter bookmark mode, you should see the message "Changing to planner mode". <br>
     2. Test `help` command. In bookmark mode, enter `help`, you should see message "Available inputs in Bookmark mode are" and the list available commands.
     Then, enter `help add`, you should see message "Adds a bookmark to the bookmark list URL must start with www or https:// or http:// Format: add {description} {URL}".
     3. Test `clear`. Enter `clear`, you should see your screen is cleared.
-    4. Test `exit`. Enter `Exit`, you should see message "Bye. Hope to see you again soon!" and the program is terminated.
+    4. Test `showsetings`. Enter `showsettings`, you should see two settings in a list.
+    5. Test `set`. Enter `set def_mode timetable`, you should see that the default mode is now `timetable`.
+    6. Test `exit`. Enter `Exit`, you should see message "Bye. Hope to see you again soon!" and the program is terminated.
+    7. Run the jar file again, the program should be in `timetable`.
     
-2. Testing bookmark commands (`add`, `show`, `delete`, `find`, `launch`)
+2. Testing bookmark commands (`add`, `show`, `delete`, `find`, `edit`, `launch`)
     1. Test `add`. Enter `add google www.google.com`, you should see message "Added bookmark: [google] www.google.com".
     2. Test `show`. Enter `show`, if you did not add any other bookmark except that of step 1, you should see message
     "Here are the bookmarks in your list: 1.[google] www.google.com".
     3. Test `find`. Enter `find google`, you should see message "Here are your matching bookmarks 1.[google] www.google.com". 
+    4. Test `edit`. 
+    Enter `edit desc 1 search`, and then type `show` and you should see that the description is now `[search]`.
+    Enter `edit url 1 www.bing.com`, and then type `show` and you should see that the URL is now `www.bing.com`.
     4. Test `delete`. Enter `delete 1`, you should see message "I've deleted this bookmark!: [google] www.google.com".
     5. Test `launch`. Re-add bookmark from step 1 and enter `launch 1`, you should see www.google.com launched in your browser.
     
