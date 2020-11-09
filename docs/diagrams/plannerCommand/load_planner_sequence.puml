@@ -1,0 +1,34 @@
+@startuml
+
+-> ":LoadPlannerCommand" : execute(bookmarks, planner, ui)
+activate ":LoadPlannerCommand"
+
+":LoadPlannerCommand" -> ":Timetable" : clearAllModule()
+activate ":Timetable"
+":Timetable" --> ":LoadPlannerCommand"
+deactivate ":Timetable"
+
+create ":Storage"
+":LoadPlannerCommand" -> ":Storage" : new Storage("./data/planner", Timetable.class)
+activate ":Storage"
+":Storage" --> ":LoadPlannerCommand"
+deactivate ":Storage"
+
+":LoadPlannerCommand" -> ":Storage" : loadPlanner()
+activate ":Storage"
+":Storage" --> ":LoadPlannerCommand" : timetable
+deactivate ":Storage"
+
+":LoadPlannerCommand" -> ":LoadPlannerCommand" : initialiseEmptySlots(temp)
+activate ":LoadPlannerCommand"
+":LoadPlannerCommand" --> ":LoadPlannerCommand" : module
+deactivate ":LoadPlannerCommand"
+":LoadPlannerCommand" -> ":Ui" : print("Planner loaded")
+
+activate ":Ui"
+":Ui" --> ":LoadPlannerCommand"
+deactivate ":Ui"
+<-- ":LoadPlannerCommand"
+deactivate ":LoadPlannerCommand"
+
+@enduml

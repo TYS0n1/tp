@@ -660,6 +660,8 @@ Format: load
 * You need to copy the different .txt files manually to the planner folder before entering this command.
 * This command only displays the common empty time slots between.
 
+You can try to download some timetable samples from [here](https://github.com/AY2021S1-CS2113T-W11-1/tp/tree/master/docs/timetable_samples).
+
 <br/>
 
 <a name="addmeeting"></a>  
@@ -677,7 +679,8 @@ Format: same as [add time slots](#addtimeslot) command.
 
 <a name="showplanner"></a>  
 #### 5.4.3. Show planner: `show`
-You will be able to see the empty time slots for a certain day or the whole week. 
+You will be able to see the empty time slots for a certain day or the whole week.
+
 If your selected timetable is the current day, you should be able to see a 
 "current time" indicator with your system local time. Else, if you have a lesson ongoing currently,
 it will instead show a "lesson now" indicator *around* your current lesson.

@@ -123,10 +123,17 @@ public class Timetable {
         SlotContainer slotContainer = new SlotContainer(slots, moduleCodeList);
         slotContainer = SlotContainer.sortSlotsByTime(slotContainer);
 
+        ArrayList<Slot> slotList = slotContainer.getSlotList();
+
+        if (slotList.size() == 0) {
+            throw new ZoomasterException(ZoomasterExceptionType.EMPTY_DAY);
+        }
+
         try {
-            return slotContainer.getSlotList().get(index - 1);
+            return slotList.get(index - 1);
         } catch (IndexOutOfBoundsException e) {
-            throw new ZoomasterException(ZoomasterExceptionType.INVALID_SLOT_NUMBER);
+            throw new ZoomasterException(ZoomasterExceptionType.INVALID_INDEX_IN_DAY,
+                Integer.toString(slotList.size()));
         }
     }
 

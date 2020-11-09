@@ -1,0 +1,77 @@
+{
+  "modules": [
+    {
+      "moduleCode": "CS2113T",
+      "bookmarks": {
+        "bookmarks": [],
+        "lineSeparator": "\r\n",
+        "items": []
+      },
+      "slots": [
+        {
+          "startTime": {
+            "hour": 15,
+            "minute": 0,
+            "second": 0,
+            "nano": 0
+          },
+          "endTime": {
+            "hour": 16,
+            "minute": 0,
+            "second": 0,
+            "nano": 0
+          },
+          "day": "mon",
+          "title": "description",
+          "bookmarks": {
+            "bookmarks": [],
+            "lineSeparator": "\r\n",
+            "items": []
+          }
+        },
+        {
+          "startTime": {
+            "hour": 19,
+            "minute": 0,
+            "second": 0,
+            "nano": 0
+          },
+          "endTime": {
+            "hour": 21,
+            "minute": 0,
+            "second": 0,
+            "nano": 0
+          },
+          "day": "tue",
+          "title": "description",
+          "bookmarks": {
+            "bookmarks": [],
+            "lineSeparator": "\r\n",
+            "items": []
+          }
+        },
+        {
+          "startTime": {
+            "hour": 11,
+            "minute": 0,
+            "second": 0,
+            "nano": 0
+          },
+          "endTime": {
+            "hour": 13,
+            "minute": 0,
+            "second": 0,
+            "nano": 0
+          },
+          "day": "tue",
+          "title": "description1",
+          "bookmarks": {
+            "bookmarks": [],
+            "lineSeparator": "\r\n",
+            "items": []
+          }
+        }
+      ]
+    }
+  ]
+}
