@@ -81,7 +81,7 @@ then its various components.
 ### Architecture
 
 The figure below shows a high-level design for the architecture of Zoomaster. <br/></br>
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/images/architecture.png) <br/></br>
+![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/architecture.png) <br/></br>
 *<center/> Figure 1.1 Architecture diagram of Zoomaster </center> <br/></br>*
 
 Our Program can be split up into 7 components
@@ -99,7 +99,7 @@ These components interact with each other as shown in Figure 1.1 to execute the 
 <a name="initialization"></a>
 ### Initialization
 The diagram below shows a class-level diagram for Zoomaster. <br/></br>
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/images/initial.png) <br/></br>
+![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/initial.png) <br/></br>
 *<center/> Figure 1.2 Class diagram of Initialization </center> <br/></br>*
 
 **API**:`Zoomaster.java`
@@ -173,16 +173,16 @@ The diagrams are colour coded as such:
 * Blue -> Timetable Mode
 * Red -> Planner Mode
 
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/images/parsercommand/mode0.png) <br/></br>
+![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/parsercommand/mode0.png) <br/></br>
 *<center/> Figure 1.4 Class diagram of Commands valid in all modes (Global) </center> <br/></br>*
 <br></br>
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/images/parsercommand/mode1.png) <br/></br>
+![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/parsercommand/mode1.png) <br/></br>
 *<center/> Figure 1.5 Class diagram of Commands valid in Bookmark Mode </center> <br/></br>*
 <br></br>
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/images/parsercommand/mode2.png) <br/></br>
+![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/parsercommand/mode2.png) <br/></br>
 *<center/> Figure 1.6 Class diagram of Commands valid in Timetable Mode</center> <br/></br>*
 <br></br>
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/images/parsercommand/mode3.png) <br/></br>
+![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/parsercommand/mode3.png) <br/></br>
 *<center/> Figure 1.7 Class diagram of Commands valid in Planner Mode</center> <br/></br>*
 <br></br>
 The Command component is responsible for carrying out the functions of Zoomaster.
@@ -521,7 +521,7 @@ to illustrate the try-catch block.
 
 
 
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/diagrams/loadModuleList/getModuleList.png)  
+![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/diagrams/loadModuleList/getModuleList.png)  
 *<center/> Figure 2.19 Sequence diagram for retrieving module list </center> <br/></br>*
 
 <br></br>
@@ -580,16 +580,16 @@ command does not exist in that mode.
 
 Below is a sequence diagram of the extended HelpCommand.   
 
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/diagrams/loadModuleList/helpCommandOverallDiagram.png)  
+![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/diagrams/loadModuleList/helpCommandOverallDiagram.png)  
 *<center/> Figure 2.20 Sequence diagram for "HelpCommand" </center> <br/></br>*
 <br></br>
 
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/diagrams/deleteSlotCommand/helpCommandDetailsIsEmpty.png)  
+![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/diagrams/loadModuleList/helpCommandDetailsIsEmpty.png)  
 *<center/> Figure 2.21 Sequence diagram for 
 "details is empty" Block </center> <br/></br>*
 <br></br>
 
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/diagrams/deleteSlotCommand/helpCommandDetailsIsNotEmpty.png)  
+![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/diagrams/loadModuleList/helpCommandDetailsIsEmpty.png)  
 *<center/> Figure 2.22 Sequence diagram for 
 "details not empty" Block </center> <br/></br>*
 <br></br>
@@ -691,9 +691,26 @@ Below is the general flow on how the mechanism works:
 The sequence diagram below explains how the load planner command is executed:
 
 ![](diagrams/load_planner.png) <br/>
-*<center/>Figure 2.26 Sequence diagram for LoadPlannerCommand</center> <br/></br>*
+*<center/>Figure 2.26 Sequence diagram for LoadPlannerCommand</center> <br/>*
 
+1. First, the command clear all the modules in the planner timetable.
+2. Next, the files inside the `planner` folder will be loaded and converted to a single timetable.
+3. The empty slots will be initialised based on the previous timetable and it will return an `EMPTY` module 
+along with all the empty slots.
+4. Finally, a confirmation message will be printed if the loading process is successful.
 
+<br>
+
+The sequence diagram below explains how the load planner command is executed:
+
+![](diagrams/save_planner.png) <br/>
+*<center/>Figure 2.27 Sequence diagram for SavePlannerCommand</center> <br/>*
+
+1. First, we store the file paths of the individual timetables to an array of files. 
+2. For each file, the command will load the timetable and add the newly added meeting to the timetable.
+3. Finally, a confirmation message will be printed  if the saving process is successful.
+
+<br>
 
 <!-- @@author -->
 <a name="appendix-a"></a>

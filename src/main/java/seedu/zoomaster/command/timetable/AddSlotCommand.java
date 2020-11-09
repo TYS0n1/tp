@@ -141,7 +141,7 @@ public class AddSlotCommand extends Command {
             } catch (DateTimeParseException e) {
                 throw new ZoomasterException(ZoomasterExceptionType.INVALID_TIME_FORMAT,
                         INVALID_TIME_FORMAT_MSG + slotAndBookmark.get(2)
-                        + " " + slotAndBookmark.get(3));
+                        + " " + slotAndBookmark.get(3) + ")");
             }
             Slot newSlot;
             if (module.slotExists(lesson, day, startTime, endTime)) {

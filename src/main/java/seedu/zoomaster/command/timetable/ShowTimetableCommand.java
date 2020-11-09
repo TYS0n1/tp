@@ -31,6 +31,7 @@ public class ShowTimetableCommand extends Command {
      * or timetable today.
      *
      * @param command The command sent by the user.
+     * @throws ZoomasterException if the input is invalid
      */
     public ShowTimetableCommand(String command) throws ZoomasterException {
         assert command.startsWith(SHOW_KW) : "command should start with show keyword";
@@ -68,6 +69,7 @@ public class ShowTimetableCommand extends Command {
      * @param bookmarks BookmarkList of the program.
      * @param timetable Timetable containing the lesson slots of the program.
      * @param ui The User Interface used to send messages to the user.
+     * @throws ZoomasterException if the module is invalid, the timetable is empty or the day input is invalid
      */
     @Override
     public void execute(BookmarkList bookmarks, Timetable timetable, Ui ui) throws ZoomasterException {
